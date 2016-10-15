@@ -1,5 +1,0 @@
-E:\CSharp\MarineFuelMonitor\SynDataBase\bin\Release\SynDataBase.dll
-E:\CSharp\MarineFuelMonitor\SynDataBase\bin\Release\SynDataBase.pdb
-E:\CSharp\MarineFuelMonitor\SynDataBase\obj\Release\SynDataBase.csprojResolveAssemblyReference.cache
-E:\CSharp\MarineFuelMonitor\SynDataBase\obj\Release\SynDataBase.dll
-E:\CSharp\MarineFuelMonitor\SynDataBase\obj\Release\SynDataBase.pdb

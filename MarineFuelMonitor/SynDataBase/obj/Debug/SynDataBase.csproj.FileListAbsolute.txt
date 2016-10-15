@@ -1,4 +1,0 @@
-E:\CSharp\MarineFuelMonitor\SynDataBase\bin\Debug\SynDataBase.dll
-E:\CSharp\MarineFuelMonitor\SynDataBase\bin\Debug\SynDataBase.pdb
-E:\CSharp\MarineFuelMonitor\SynDataBase\obj\Debug\SynDataBase.dll
-E:\CSharp\MarineFuelMonitor\SynDataBase\obj\Debug\SynDataBase.pdb
