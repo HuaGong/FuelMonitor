@@ -1,0 +1,5 @@
+E:\CSharp\MarineFuelMonitor\SynRealDatabase\bin\Release\SynRealDatabase.dll
+E:\CSharp\MarineFuelMonitor\SynRealDatabase\bin\Release\SynRealDatabase.pdb
+E:\CSharp\MarineFuelMonitor\SynRealDatabase\obj\Release\SynRealDatabase.dll
+E:\CSharp\MarineFuelMonitor\SynRealDatabase\obj\Release\SynRealDatabase.pdb
+E:\CSharp\MarineFuelMonitor\SynRealDatabase\obj\Release\SynRealDatabase.csprojResolveAssemblyReference.cache
