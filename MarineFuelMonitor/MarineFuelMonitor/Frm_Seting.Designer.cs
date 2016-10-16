@@ -45,8 +45,11 @@
             this.Tpg_GPS = new System.Windows.Forms.TabPage();
             this.Tpg_System = new System.Windows.Forms.TabPage();
             this.btn_Quit = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.Tpg_Server.SuspendLayout();
+            this.Tpg_System.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -198,6 +201,7 @@
             // Tpg_System
             // 
             this.Tpg_System.BackColor = System.Drawing.SystemColors.Control;
+            this.Tpg_System.Controls.Add(this.dataGridView1);
             this.Tpg_System.Location = new System.Drawing.Point(4, 104);
             this.Tpg_System.Name = "Tpg_System";
             this.Tpg_System.Size = new System.Drawing.Size(1130, 430);
@@ -215,6 +219,15 @@
             this.btn_Quit.UseVisualStyleBackColor = true;
             this.btn_Quit.Click += new System.EventHandler(this.btn_QuitClicked);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 14);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(416, 381);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // Frm_Seting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -227,6 +240,8 @@
             this.tabControl1.ResumeLayout(false);
             this.Tpg_Server.ResumeLayout(false);
             this.Tpg_Server.PerformLayout();
+            this.Tpg_System.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,5 +265,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

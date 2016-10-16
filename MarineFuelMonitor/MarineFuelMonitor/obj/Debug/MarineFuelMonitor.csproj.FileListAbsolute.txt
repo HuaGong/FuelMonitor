@@ -17,3 +17,5 @@ E:\CSharp\MarineFuelMonitor\MarineFuelMonitor\bin\Debug\SynDataBase.dll
 E:\CSharp\MarineFuelMonitor\MarineFuelMonitor\bin\Debug\SynDataBase.pdb
 E:\CSharp\MarineFuelMonitor\MarineFuelMonitor\bin\Debug\SynRealDatabase.dll
 E:\CSharp\MarineFuelMonitor\MarineFuelMonitor\bin\Debug\SynRealDatabase.pdb
+F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\MarineFuelMonitor\obj\Debug\MarineFuelMonitor.exe
+F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\MarineFuelMonitor\obj\Debug\MarineFuelMonitor.pdb
