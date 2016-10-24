@@ -20,5 +20,24 @@ namespace MarineFuelMonitor
         {
             this.Close();
         }
+
+        private void Frm_SetingLoad(object sender, EventArgs e)
+        {
+            this.TB_RDSConnString.Text = UserSetings.Default.RDSConnString;
+            this.TB_PLCIP.Text = UserSetings.Default.PLCConnIp;
+
+        }
+
+        private void BTN_DBResave_Click(object sender, EventArgs e)
+        {
+            UserSetings.Default.RDSConnString = this.TB_RDSConnString.Text;
+            UserSetings.Default.Save();
+        }
+
+        private void BTN_PLCResave_Click(object sender, EventArgs e)
+        {
+            UserSetings.Default.PLCConnIp = this.TB_PLCIP.Text;
+            UserSetings.Default.Save();
+        }
     }
 }

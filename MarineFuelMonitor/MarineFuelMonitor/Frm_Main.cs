@@ -33,7 +33,7 @@ namespace MarineFuelMonitor
     {
 
         MySqlConnection conn,conn2;
-        ModbusClient modbusClient = new ModbusClient("192.168.163.163", 502);
+        ModbusClient modbusClient = new ModbusClient(UserSetings.Default.PLCConnIp , 502);
         Mutex M = new Mutex();
         public Frm_Main()
         {
@@ -232,6 +232,11 @@ namespace MarineFuelMonitor
             {
                 bgw_WiteSubData.RunWorkerAsync();
             }
+            //启动积分计算线程
+            if (bgw_CalcTravel.IsBusy == false)
+            {
+                bgw_CalcTravel.RunWorkerAsync();
+            }
             //更改工况选择的显示
             if (Data.Mode_Selected == 1) { btn_ModeSelect.Text = "助泊"; }
             if (Data.Mode_Selected == 2) { btn_ModeSelect.Text = "单放"; }
@@ -249,6 +254,11 @@ namespace MarineFuelMonitor
                 LB_StartTime.Text = DateTime.Now.ToString("T");
                Data.Mode_Selected_Last = Data.Mode_Selected;
                Data.InputDI[13] = false;
+               //初始化积分程序变量
+               Data.TravelCalcTime = DateTime.Now;
+               Data.TravelLen = 0.0;
+               Data.InputAI[11] = 0.0;
+               Data.InputAI[21] = 0.0;
                M.ReleaseMutex();
              }
 
@@ -259,15 +269,18 @@ namespace MarineFuelMonitor
             
             //刷新页面的显示值
             //左主机
-            LB_MESpeedPS.Text = Data.InputAI[14].ToString();
+            LB_MESpeedPS.Text = Data.InputAI[14].ToString("N3");
             GG_MEPS.Value = Data.InputAI[14];
-            LB_InstantFuelPS.Text = Data.InputAI[10].ToString();
-            LB_FuelAllPS.Text = Data.InputAI[11].ToString();
+            LB_InstantFuelPS.Text = Data.InputAI[10].ToString("N3");
+            LB_FuelAllPS.Text = Data.InputAI[11].ToString("N3");
+            //总航行里程
+            LB_ShipSpeed.Text = Data.ShipSpeed.ToString("N3");
+            LB_TimeTravelLen.Text = Data.TravelLen.ToString("N3");
             //右主机
             LB_MESpeedSB.Text = Data.InputAI[24].ToString();
             GG_MESB.Value = Data.InputAI[24];
-            LB_InstantFuelSB.Text = Data.InputAI[20].ToString();
-            LB_FuelAllSB.Text = Data.InputAI[21].ToString();
+            LB_InstantFuelSB.Text = Data.InputAI[20].ToString("N3");
+            LB_FuelAllSB.Text = Data.InputAI[21].ToString("N3");
             //油位、舱容、油温、库存
 
             //
@@ -389,7 +402,7 @@ namespace MarineFuelMonitor
                             LrealTrans[5] = LrealTrans3[1];
                             LrealTrans[6] = LrealTrans4[0];
                             LrealTrans[7] = LrealTrans4[1];
-                            Data.InputAI[15] = BitConverter.ToDouble(LrealTrans,0);
+                            //Data.InputAI[15] = BitConverter.ToDouble(LrealTrans,0);
 
 
                             Data.InputAI[20] = Convert.ToDouble(readHoldingRegisters[10]) / 100.0;
@@ -410,7 +423,7 @@ namespace MarineFuelMonitor
                             LrealTrans[5] = LrealTrans3[1];
                             LrealTrans[6] = LrealTrans4[0];
                             LrealTrans[7] = LrealTrans4[1];
-                            Data.InputAI[25] = BitConverter.ToDouble(LrealTrans, 0);
+                            //Data.InputAI[25] = BitConverter.ToDouble(LrealTrans, 0);
 
                             Data.PLCComFlag = false;
 
@@ -481,7 +494,7 @@ namespace MarineFuelMonitor
         private void SynSubTotalDBDowork(object sender, DoWorkEventArgs e)
         {
             SynData synSubTotal = new SynData();
-            synSubTotal.setconn("Server=localhost;uid=root;pwd=ihmc;Database=marinefueldb;CharSet=utf8;port=3306", "Server=rm-uf64fql0n27338879o.mysql.rds.aliyuncs.com;uid=tuser;pwd=t_user001;Database=shipinfo;CharSet=utf8;port=3306");
+            synSubTotal.setconn("Server=localhost;uid=root;pwd=ihmc;Database=marinefueldb;CharSet=utf8;port=3306", UserSetings.Default.RDSConnString);
             synSubTotal.openconn();
             Led_SubTotalSynOk.Value= synSubTotal.syn();
         }
@@ -489,7 +502,7 @@ namespace MarineFuelMonitor
         private void SynRealDBDoWork(object sender, DoWorkEventArgs e)
         {
             SynRealDB synRealData = new SynRealDB();
-            synRealData.setconn("Server=localhost;uid=root;pwd=ihmc;Database=marinefueldb;CharSet=utf8;port=3306", "Server=rm-uf64fql0n27338879o.mysql.rds.aliyuncs.com;uid=tuser;pwd=t_user001;Database=shipinfo;CharSet=utf8;port=3306");
+            synRealData.setconn("Server=localhost;uid=root;pwd=ihmc;Database=marinefueldb;CharSet=utf8;port=3306", UserSetings.Default.RDSConnString);
             synRealData.openconn();
            Led_SynRealOK.Value = synRealData.syn();
         }
@@ -569,6 +582,25 @@ namespace MarineFuelMonitor
         private void btn_DayOrNight_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void bgw_CalcTravelLen(object sender, DoWorkEventArgs e)
+        {
+            
+            TimeSpan ts;
+            if (Data.TravelCalcTime==null)
+            {
+                Data.TravelCalcTime = Data.StartTime;
+            }
+            
+            ts=DateTime.Now-Data.TravelCalcTime;
+            Data.ShipSpeed = 10.8;
+            Data.TravelLen = Data.TravelLen + (Convert.ToDouble(ts.TotalMilliseconds) * Data.ShipSpeed) / 3600000.0;
+            Data.InputAI[11] = Data.InputAI[11] + (Convert.ToDouble(ts.TotalMilliseconds) * Data.InputAI[10]) / 60000.0;
+            Data.InputAI[21] = Data.InputAI[21] + (Convert.ToDouble(ts.TotalMilliseconds) * Data.InputAI[20]) / 60000.0;
+            Data.TravelCalcTime = DateTime.Now;
+            Thread.Sleep(1000);
+
         }
            
 

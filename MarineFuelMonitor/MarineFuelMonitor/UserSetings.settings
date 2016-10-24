@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MarineFuelMonitor" GeneratedClassName="UserSetings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RDSConnString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=rm-uf64fql0n27338879o.mysql.rds.aliyuncs.com;uid=tuser;pwd=t_user001;Database=shipinfo;CharSet=utf8;port=3306</Value>
+    </Setting>
+    <Setting Name="PLCConnIp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192.168.163.163</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

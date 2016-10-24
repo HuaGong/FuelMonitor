@@ -109,6 +109,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Led_SynRealOK = new NationalInstruments.UI.WindowsForms.Led();
             this.bgw_WiteSubData = new System.ComponentModel.BackgroundWorker();
+            this.bgw_CalcTravel = new System.ComponentModel.BackgroundWorker();
+            this.label19 = new System.Windows.Forms.Label();
+            this.LB_TimeTravelLen = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TK_FuelTankLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GG_MEPS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GG_MESB)).BeginInit();
@@ -242,7 +246,7 @@
             this.LB_InstantFuelPS.BackColor = System.Drawing.Color.Transparent;
             this.LB_InstantFuelPS.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LB_InstantFuelPS.ForeColor = System.Drawing.Color.Lime;
-            this.LB_InstantFuelPS.Location = new System.Drawing.Point(98, 387);
+            this.LB_InstantFuelPS.Location = new System.Drawing.Point(95, 463);
             this.LB_InstantFuelPS.Name = "LB_InstantFuelPS";
             this.LB_InstantFuelPS.Size = new System.Drawing.Size(220, 64);
             this.LB_InstantFuelPS.TabIndex = 17;
@@ -266,7 +270,7 @@
             this.LB_InstantFuelSB.BackColor = System.Drawing.Color.Transparent;
             this.LB_InstantFuelSB.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LB_InstantFuelSB.ForeColor = System.Drawing.Color.Lime;
-            this.LB_InstantFuelSB.Location = new System.Drawing.Point(476, 387);
+            this.LB_InstantFuelSB.Location = new System.Drawing.Point(473, 463);
             this.LB_InstantFuelSB.Name = "LB_InstantFuelSB";
             this.LB_InstantFuelSB.Size = new System.Drawing.Size(220, 64);
             this.LB_InstantFuelSB.TabIndex = 19;
@@ -636,7 +640,7 @@
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label34.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label34.Location = new System.Drawing.Point(690, 421);
+            this.label34.Location = new System.Drawing.Point(687, 497);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(58, 24);
             this.label34.TabIndex = 54;
@@ -647,7 +651,7 @@
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label35.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label35.Location = new System.Drawing.Point(324, 421);
+            this.label35.Location = new System.Drawing.Point(321, 497);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(58, 24);
             this.label35.TabIndex = 55;
@@ -658,7 +662,7 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label36.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label36.Location = new System.Drawing.Point(324, 517);
+            this.label36.Location = new System.Drawing.Point(321, 593);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(58, 24);
             this.label36.TabIndex = 59;
@@ -669,7 +673,7 @@
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label37.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label37.Location = new System.Drawing.Point(690, 517);
+            this.label37.Location = new System.Drawing.Point(687, 593);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(58, 24);
             this.label37.TabIndex = 58;
@@ -681,7 +685,7 @@
             this.LB_FuelPerNmiSB.BackColor = System.Drawing.Color.Transparent;
             this.LB_FuelPerNmiSB.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LB_FuelPerNmiSB.ForeColor = System.Drawing.Color.Blue;
-            this.LB_FuelPerNmiSB.Location = new System.Drawing.Point(476, 483);
+            this.LB_FuelPerNmiSB.Location = new System.Drawing.Point(473, 559);
             this.LB_FuelPerNmiSB.Name = "LB_FuelPerNmiSB";
             this.LB_FuelPerNmiSB.Size = new System.Drawing.Size(220, 64);
             this.LB_FuelPerNmiSB.TabIndex = 57;
@@ -693,7 +697,7 @@
             this.LB_FuelPerNmiPS.BackColor = System.Drawing.Color.Transparent;
             this.LB_FuelPerNmiPS.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LB_FuelPerNmiPS.ForeColor = System.Drawing.Color.Blue;
-            this.LB_FuelPerNmiPS.Location = new System.Drawing.Point(98, 483);
+            this.LB_FuelPerNmiPS.Location = new System.Drawing.Point(95, 559);
             this.LB_FuelPerNmiPS.Name = "LB_FuelPerNmiPS";
             this.LB_FuelPerNmiPS.Size = new System.Drawing.Size(220, 64);
             this.LB_FuelPerNmiPS.TabIndex = 56;
@@ -703,7 +707,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label40.Location = new System.Drawing.Point(118, 371);
+            this.label40.Location = new System.Drawing.Point(115, 447);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(59, 12);
             this.label40.TabIndex = 60;
@@ -713,7 +717,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label41.Location = new System.Drawing.Point(491, 371);
+            this.label41.Location = new System.Drawing.Point(488, 447);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(59, 12);
             this.label41.TabIndex = 61;
@@ -723,7 +727,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label42.Location = new System.Drawing.Point(491, 471);
+            this.label42.Location = new System.Drawing.Point(488, 547);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(59, 12);
             this.label42.TabIndex = 63;
@@ -733,7 +737,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label43.Location = new System.Drawing.Point(118, 471);
+            this.label43.Location = new System.Drawing.Point(115, 547);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(59, 12);
             this.label43.TabIndex = 62;
@@ -743,7 +747,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label44.Location = new System.Drawing.Point(369, 292);
+            this.label44.Location = new System.Drawing.Point(264, 351);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(53, 12);
             this.label44.TabIndex = 64;
@@ -756,7 +760,7 @@
             this.LB_ShipSpeed.BackColor = System.Drawing.Color.Transparent;
             this.LB_ShipSpeed.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LB_ShipSpeed.ForeColor = System.Drawing.Color.Orange;
-            this.LB_ShipSpeed.Location = new System.Drawing.Point(359, 320);
+            this.LB_ShipSpeed.Location = new System.Drawing.Point(254, 379);
             this.LB_ShipSpeed.Name = "LB_ShipSpeed";
             this.LB_ShipSpeed.Size = new System.Drawing.Size(79, 33);
             this.LB_ShipSpeed.TabIndex = 65;
@@ -767,7 +771,7 @@
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label46.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label46.Location = new System.Drawing.Point(442, 326);
+            this.label46.Location = new System.Drawing.Point(337, 385);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(70, 24);
             this.label46.TabIndex = 66;
@@ -844,7 +848,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label4.Location = new System.Drawing.Point(118, 563);
+            this.label4.Location = new System.Drawing.Point(115, 639);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 12);
             this.label4.TabIndex = 74;
@@ -855,7 +859,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label5.Location = new System.Drawing.Point(324, 609);
+            this.label5.Location = new System.Drawing.Point(321, 685);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 24);
             this.label5.TabIndex = 73;
@@ -867,7 +871,7 @@
             this.LB_FuelAllPS.BackColor = System.Drawing.Color.Transparent;
             this.LB_FuelAllPS.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LB_FuelAllPS.ForeColor = System.Drawing.Color.Blue;
-            this.LB_FuelAllPS.Location = new System.Drawing.Point(98, 575);
+            this.LB_FuelAllPS.Location = new System.Drawing.Point(95, 651);
             this.LB_FuelAllPS.Name = "LB_FuelAllPS";
             this.LB_FuelAllPS.Size = new System.Drawing.Size(220, 64);
             this.LB_FuelAllPS.TabIndex = 72;
@@ -877,7 +881,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label7.Location = new System.Drawing.Point(495, 563);
+            this.label7.Location = new System.Drawing.Point(492, 639);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 12);
             this.label7.TabIndex = 77;
@@ -888,7 +892,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label8.Location = new System.Drawing.Point(689, 606);
+            this.label8.Location = new System.Drawing.Point(686, 682);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 24);
             this.label8.TabIndex = 76;
@@ -900,7 +904,7 @@
             this.LB_FuelAllSB.BackColor = System.Drawing.Color.Transparent;
             this.LB_FuelAllSB.Font = new System.Drawing.Font("宋体", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LB_FuelAllSB.ForeColor = System.Drawing.Color.Blue;
-            this.LB_FuelAllSB.Location = new System.Drawing.Point(475, 575);
+            this.LB_FuelAllSB.Location = new System.Drawing.Point(472, 651);
             this.LB_FuelAllSB.Name = "LB_FuelAllSB";
             this.LB_FuelAllSB.Size = new System.Drawing.Size(220, 64);
             this.LB_FuelAllSB.TabIndex = 75;
@@ -939,12 +943,54 @@
             this.bgw_WiteSubData.WorkerReportsProgress = true;
             this.bgw_WiteSubData.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgw_WriteSubDataDoWork);
             // 
+            // bgw_CalcTravel
+            // 
+            this.bgw_CalcTravel.WorkerReportsProgress = true;
+            this.bgw_CalcTravel.WorkerSupportsCancellation = true;
+            this.bgw_CalcTravel.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgw_CalcTravelLen);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label19.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label19.Location = new System.Drawing.Point(542, 382);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(46, 24);
+            this.label19.TabIndex = 82;
+            this.label19.Text = "nmi";
+            // 
+            // LB_TimeTravelLen
+            // 
+            this.LB_TimeTravelLen.AutoSize = true;
+            this.LB_TimeTravelLen.BackColor = System.Drawing.Color.Transparent;
+            this.LB_TimeTravelLen.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LB_TimeTravelLen.ForeColor = System.Drawing.Color.Orange;
+            this.LB_TimeTravelLen.Location = new System.Drawing.Point(459, 376);
+            this.LB_TimeTravelLen.Name = "LB_TimeTravelLen";
+            this.LB_TimeTravelLen.Size = new System.Drawing.Size(79, 33);
+            this.LB_TimeTravelLen.TabIndex = 81;
+            this.LB_TimeTravelLen.Text = "10.5";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label24.Location = new System.Drawing.Point(469, 348);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(53, 12);
+            this.label24.TabIndex = 80;
+            this.label24.Text = "航次里程";
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.LB_TimeTravelLen);
+            this.Controls.Add(this.label24);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Led_SynRealOK);
             this.Controls.Add(this.label7);
@@ -1119,6 +1165,10 @@
         private System.Windows.Forms.Label label6;
         private NationalInstruments.UI.WindowsForms.Led Led_SynRealOK;
         private System.ComponentModel.BackgroundWorker bgw_WiteSubData;
+        private System.ComponentModel.BackgroundWorker bgw_CalcTravel;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label LB_TimeTravelLen;
+        private System.Windows.Forms.Label label24;
     }
 }
 

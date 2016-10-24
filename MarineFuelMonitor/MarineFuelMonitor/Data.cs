@@ -16,10 +16,14 @@ namespace MarineFuelMonitor
         public static int Mode_Selected;
         public static int Mode_Selected_Last;
         public static int OperatorNow;
+        public static double ShipSpeed;
         public static DateTime StartTime; //工况起始时间
-       // public static DateTime StopTime;  //工况停止时间
+        public static DateTime TravelCalcTime;  //积分累计上次时间
+        public static double TravelLen;
+       // public static double 
        // public static DateTime InstantUsedTime;//工况用时
         public static DateTime StartTimeLast; //上次的起始时间
+
 
 
         public static bool PLCComFlag;//PLC通信开始
