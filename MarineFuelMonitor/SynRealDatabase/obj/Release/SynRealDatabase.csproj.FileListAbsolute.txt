@@ -3,3 +3,8 @@ E:\CSharp\MarineFuelMonitor\SynRealDatabase\bin\Release\SynRealDatabase.pdb
 E:\CSharp\MarineFuelMonitor\SynRealDatabase\obj\Release\SynRealDatabase.dll
 E:\CSharp\MarineFuelMonitor\SynRealDatabase\obj\Release\SynRealDatabase.pdb
 E:\CSharp\MarineFuelMonitor\SynRealDatabase\obj\Release\SynRealDatabase.csprojResolveAssemblyReference.cache
+F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\SynRealDatabase\bin\Release\SynRealDatabase.dll
+F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\SynRealDatabase\bin\Release\SynRealDatabase.pdb
+F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\SynRealDatabase\obj\Release\SynRealDatabase.csprojResolveAssemblyReference.cache
+F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\SynRealDatabase\obj\Release\SynRealDatabase.dll
+F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\SynRealDatabase\obj\Release\SynRealDatabase.pdb

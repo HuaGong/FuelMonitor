@@ -26,6 +26,7 @@ using GetNetStatus;
 using SynDataBase;
 using SynRealDatabase;
 using System.Threading;
+using ICCard;
 
 namespace MarineFuelMonitor
 {
@@ -35,6 +36,7 @@ namespace MarineFuelMonitor
         MySqlConnection conn,conn2;
         ModbusClient modbusClient = new ModbusClient(UserSetings.Default.PLCConnIp , 502);
         Mutex M = new Mutex();
+        M1Card _M1Card = new M1Card();
         public Frm_Main()
         {
             InitializeComponent();
@@ -46,8 +48,8 @@ namespace MarineFuelMonitor
 
             conn = new MySqlConnection(Data.conn);
             conn2 = new MySqlConnection(Data.conn);
-            
-            
+
+            _M1Card.inital();
            
         }
 
@@ -283,7 +285,9 @@ namespace MarineFuelMonitor
             LB_FuelAllSB.Text = Data.InputAI[21].ToString("N3");
             //油位、舱容、油温、库存
 
-            //
+            //当前的刷卡信息
+            Data.OperatorNow = _M1Card.ID;
+            LB_Operator.Text = _M1Card.Name;
 
             //采集箱PLC连接状态显示
             Led_PlcOK.Value = Data.InputDI[0];
