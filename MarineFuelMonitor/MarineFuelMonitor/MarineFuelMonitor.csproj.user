@@ -4,10 +4,13 @@
     <PublishUrlHistory>publish\</PublishUrlHistory>
     <InstallUrlHistory>http://139.224.165.192/MarineFuelMonitor/|http://192.168.1.101/</InstallUrlHistory>
     <SupportUrlHistory />
-    <UpdateUrlHistory />
+    <UpdateUrlHistory>http://139.224.165.192/MarineFuelMonitor/</UpdateUrlHistory>
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>zh-CN</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
   </PropertyGroup>
 </Project>

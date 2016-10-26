@@ -40,7 +40,10 @@ namespace ICCard
             }
             else
             {
-                _cardPolling.start(readerList[0].ToString());
+                if (readerList != null)
+                {
+                    _cardPolling.start(readerList[0].ToString());
+                }
             }
 
 
