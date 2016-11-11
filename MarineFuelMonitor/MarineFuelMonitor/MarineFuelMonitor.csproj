@@ -28,8 +28,8 @@
     <InstallUrl>http://139.224.165.192/MarineFuelMonitor/</InstallUrl>
     <UpdateUrl>http://139.224.165.192/MarineFuelMonitor/</UpdateUrl>
     <ProductName>油耗监控系统</ProductName>
-    <PublisherName>镇江远航电子</PublisherName>
-    <ApplicationRevision>26</ApplicationRevision>
+    <PublisherName>镇江远洋电子</PublisherName>
+    <ApplicationRevision>28</ApplicationRevision>
     <ApplicationVersion>1.1.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -191,6 +191,18 @@
     <Compile Include="Helper.cs" />
     <Compile Include="M1Card.cs" />
     <Compile Include="MifareClassic.cs" />
+    <Compile Include="Nema\Error.cs" />
+    <Compile Include="Nema\Field.cs" />
+    <Compile Include="Nema\GGA.cs" />
+    <Compile Include="Nema\GLL.cs" />
+    <Compile Include="Nema\GSA.cs" />
+    <Compile Include="Nema\GSV.cs" />
+    <Compile Include="Nema\MessageHandler.cs" />
+    <Compile Include="Nema\MinimalNmeaPositionNotifier.cs" />
+    <Compile Include="Nema\Nmea.cs" />
+    <Compile Include="Nema\NmeaMsg.cs" />
+    <Compile Include="Nema\RMC.cs" />
+    <Compile Include="Nema\Utils.cs" />
     <Compile Include="PcscException.cs" />
     <Compile Include="PcscProvider.cs" />
     <Compile Include="PcscReader.cs" />

@@ -47,5 +47,17 @@ namespace MarineFuelMonitor {
                 this["PLCConnIp"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM1")]
+        public string GPSPort {
+            get {
+                return ((string)(this["GPSPort"]));
+            }
+            set {
+                this["GPSPort"] = value;
+            }
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace ICCard
         private CardPolling _cardPolling;
         public String Name;
         public int ID;
+        public bool ReaderOK;
         string[] readerList;
        
 
@@ -68,7 +69,14 @@ namespace ICCard
                 //Get all smart card reader connected to computer
                 readerList = acr1281UC1.getReaderList();
 
-               
+                if (readerList != null)
+                {
+                    ReaderOK = true;
+                }
+                else
+                {
+                    ReaderOK = false;
+                }
 
                
             }

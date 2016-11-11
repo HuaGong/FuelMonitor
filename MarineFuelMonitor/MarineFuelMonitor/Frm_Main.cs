@@ -27,6 +27,9 @@ using SynDataBase;
 using SynRealDatabase;
 using System.Threading;
 using ICCard;
+using gps.parser;
+using System.IO;
+using System.IO.Ports;
 
 namespace MarineFuelMonitor
 {
@@ -37,6 +40,10 @@ namespace MarineFuelMonitor
         ModbusClient modbusClient = new ModbusClient(UserSetings.Default.PLCConnIp , 502);
         Mutex M = new Mutex();
         M1Card _M1Card = new M1Card();
+        gps.parser.Nmea NmeaParse = new gps.parser.Nmea();
+        gps.parser.MinimalNmeaPositionNotifier mnPosition = new gps.parser.MinimalNmeaPositionNotifier();
+        SerialPort GPSPort = new SerialPort();
+
         public Frm_Main()
         {
             InitializeComponent();
@@ -206,7 +213,7 @@ namespace MarineFuelMonitor
             TimeSpan ts2 = new
             TimeSpan(DateTime2.Ticks);
             TimeSpan ts = ts1.Subtract(ts2).Duration();
-            dateDiff = ts.Hours.ToString() + "h " + ts.Minutes.ToString() + "m " + ts.Seconds.ToString() + "s";//ts.Days.ToString() + "天"
+            dateDiff =ts.Days.ToString() + "d " + ts.Hours.ToString() + "h " + ts.Minutes.ToString() + "m " + ts.Seconds.ToString() + "s" ;
             return dateDiff;
         }
 
@@ -271,27 +278,71 @@ namespace MarineFuelMonitor
             
             //刷新页面的显示值
             //左主机
-            LB_MESpeedPS.Text = Data.InputAI[14].ToString("N3");
+            //转速
+            LB_MESpeedPS.Text = Data.InputAI[14].ToString("N0");
             GG_MEPS.Value = Data.InputAI[14];
-            LB_InstantFuelPS.Text = Data.InputAI[10].ToString("N3");
-            LB_FuelAllPS.Text = Data.InputAI[11].ToString("N3");
+            //瞬时油耗
+            LB_InstantFuelPS.Text = Data.InputAI[10].ToString("N2");
+            //航次累计油耗
+            LB_FuelAllPS.Text = Data.InputAI[11].ToString("N2");
+            //航次平均油耗
+            if (Data.TravelLen == 0.0)
+            { LB_FuelPerNmiPS.Text = "0.0"; }
+            else
+            {
+                LB_FuelPerNmiPS.Text = (Data.InputAI[11] / Data.TravelLen).ToString("N2");
+            }
+          //  LB_FuelPerNmiPS.Text = (Data.InputAI[11] / Data.TravelLen).ToString("N3");
             //总航行里程
-            LB_ShipSpeed.Text = Data.ShipSpeed.ToString("N3");
-            LB_TimeTravelLen.Text = Data.TravelLen.ToString("N3");
+            LB_ShipSpeed.Text = Data.ShipSpeed.ToString("N1");
+            LB_TimeTravelLen.Text = Data.TravelLen.ToString("N1");
             //右主机
-            LB_MESpeedSB.Text = Data.InputAI[24].ToString();
+            //转速
+            LB_MESpeedSB.Text = Data.InputAI[24].ToString("N0");
             GG_MESB.Value = Data.InputAI[24];
-            LB_InstantFuelSB.Text = Data.InputAI[20].ToString("N3");
-            LB_FuelAllSB.Text = Data.InputAI[21].ToString("N3");
+            //瞬时油耗
+            LB_InstantFuelSB.Text = Data.InputAI[20].ToString("N2");
+            //航次累计油耗
+            LB_FuelAllSB.Text = Data.InputAI[21].ToString("N2");
+            //航次平均油耗
+            if (Data.TravelLen == 0.0)
+            { LB_FuelPerNmiSB.Text = "0.0"; }
+            else
+            {
+                LB_FuelPerNmiSB.Text = (Data.InputAI[21] / Data.TravelLen).ToString("N2");
+            }
+           // LB_FuelPerNmiSB.Text = (Data.InputAI[21] / Data.TravelLen).ToString("N3");
             //油位、舱容、油温、库存
+            LB_TankLevel.Text = Data.InputAI[7].ToString("N2");
+            TK_FuelTankLevel.Value = Data.InputAI[7];
+            LB_TankCap.Text = Data.InputAI[8].ToString("N2");
+            LB_TankTemp.Text = Data.InputAI[12].ToString("N2");
+            LB_FuelWeight.Text = Data.InputAI[9].ToString("N2");
+            LB_UsedFuel.Text = (Data.InputAI[11] + Data.InputAI[21]).ToString("N2");
 
             //当前的刷卡信息
             Data.OperatorNow = _M1Card.ID;
+            LB_OperatorID.Text = Data.OperatorNow.ToString();
             LB_Operator.Text = _M1Card.Name;
+            //读卡器连接状态指示
+            Led_ReaderOk.Value = _M1Card.ReaderOK;
 
             //采集箱PLC连接状态显示
             Led_PlcOK.Value = Data.InputDI[0];
             Data.InputDI[12] = true;
+
+            //GPS连接状态
+            Data.GPSCounter += 1;
+            if (Data.GPSCounter >= 10)
+            {
+                Led_GpsOk.Value = false;
+                Data.GPSCounter = 10;
+            }
+            else
+            {
+                Led_GpsOk.Value = true;
+
+            }
 
 
         }
@@ -308,6 +359,7 @@ namespace MarineFuelMonitor
         private void Frm_Main_Close(object sender, FormClosingEventArgs e)
         {
             conn.Dispose();
+            GPSPort.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -317,8 +369,55 @@ namespace MarineFuelMonitor
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
+            mnPosition.Init(NmeaParse);
+            mnPosition.NewGspPosition += new gps.parser.MinimalNmeaPositionNotifier.NewGspPositionEventHandler(NewGspPosition);
+            //NmeaParse.NewMessage += new gps.parser.Nmea.NewMessageEventHandler(HandleNewMessage);
+            initalGPS();
+
+
+           
+        }
+        private void NewGspPosition(gps.parser.GpsPosition pos)
+        { // access: pos.x, pos.y, pos.speed, pos.course, pos.hdop, etc. 
+            // all data are in metric system ... 
+            Data.InputAI[5] = pos.x;
+            Data.InputAI[6] = pos.y;
+            Data.InputAI[4] = pos.speed / 1.852;
+            Data.ShipSpeed = Data.InputAI[4];
 
         }
+        private void initalGPS()
+        {
+            //GPSPort.PortName = cmb_ComSelect.Text;
+            GPSPort.PortName = UserSetings.Default.GPSPort;
+            GPSPort.BaudRate = 9600;
+            GPSPort.StopBits = StopBits.One;
+            GPSPort.Parity = Parity.None;
+            GPSPort.ReadTimeout = SerialPort.InfiniteTimeout;
+            try
+            {
+                GPSPort.Open();
+            }
+            catch
+            {
+                MessageBox.Show("GPS端口打开失败，请检查端口设置");
+            }
+
+            if (GPSPort.IsOpen)
+            {
+                NmeaParse.Source = GPSPort.BaseStream;
+                //GPSPort.BaseStream.
+                // NmeaParse.Source.Length
+                NmeaParse.Start();
+
+            }
+            else
+            {
+ 
+            }
+
+        }
+
 
         private void label19_Click(object sender, EventArgs e)
         {
@@ -389,7 +488,7 @@ namespace MarineFuelMonitor
                             readHoldingRegisters=modbusClient.ReadHoldingRegisters(0, 30);
                             //对获取的数据进行解码
                             Data.InputAI[10] = Convert.ToDouble(readHoldingRegisters[0]) / 100.0;
-                            Data.InputAI[11] = Convert.ToDouble(readHoldingRegisters[1]) / 100.0;
+                           // Data.InputAI[11] = Convert.ToDouble(readHoldingRegisters[1]) / 100.0;
                             Data.InputAI[12] = Convert.ToDouble(readHoldingRegisters[2]) / 100.0;
                             Data.InputAI[13] = Convert.ToDouble(readHoldingRegisters[3]) / 100.0;
                             Data.InputAI[14] = Convert.ToDouble(readHoldingRegisters[4]) / 10.0;
@@ -410,7 +509,7 @@ namespace MarineFuelMonitor
 
 
                             Data.InputAI[20] = Convert.ToDouble(readHoldingRegisters[10]) / 100.0;
-                            Data.InputAI[21] = Convert.ToDouble(readHoldingRegisters[11]) / 100.0;
+                           // Data.InputAI[21] = Convert.ToDouble(readHoldingRegisters[11]) / 100.0;
                             Data.InputAI[22] = Convert.ToDouble(readHoldingRegisters[12]) / 100.0;
                             Data.InputAI[23] = Convert.ToDouble(readHoldingRegisters[13]) / 100.0;
                             Data.InputAI[24] = Convert.ToDouble(readHoldingRegisters[14]) / 10.0;
@@ -546,8 +645,8 @@ namespace MarineFuelMonitor
                 EndTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 Mode = Data.Mode_Selected_Last.ToString();
                 Operator = Data.OperatorNow.ToString();
-                AveFuel = "10.2";
-                AveFuel2 = "10.3";
+                AveFuel = Data.InputAI[11].ToString("N2");
+                AveFuel2 = Data.InputAI[21].ToString("N2");
                 SubTotal = Data.InputAI[15].ToString();
                 SubTotal2 = Data.InputAI[25].ToString();
                 MySqlCommand mycmd3 = new MySqlCommand("insert into revsubdata(BeginTime,EndTime,Mode,Operator,MENumber,AveFuel,SubTotal) values(STR_TO_DATE('"
@@ -598,10 +697,12 @@ namespace MarineFuelMonitor
             }
             
             ts=DateTime.Now-Data.TravelCalcTime;
-            Data.ShipSpeed = 10.8;
+            //Data.ShipSpeed = 10.8;
             Data.TravelLen = Data.TravelLen + (Convert.ToDouble(ts.TotalMilliseconds) * Data.ShipSpeed) / 3600000.0;
             Data.InputAI[11] = Data.InputAI[11] + (Convert.ToDouble(ts.TotalMilliseconds) * Data.InputAI[10]) / 60000.0;
             Data.InputAI[21] = Data.InputAI[21] + (Convert.ToDouble(ts.TotalMilliseconds) * Data.InputAI[20]) / 60000.0;
+
+
             Data.TravelCalcTime = DateTime.Now;
             Thread.Sleep(1000);
 

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="MarineFuelMonitor.exe" version="1.1.2.24" publicKeyToken="27247dc08b34ae9a" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="MarineFuelMonitor.exe" version="1.1.2.26" publicKeyToken="27247dc08b34ae9a" language="neutral" processorArchitecture="x86" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="MarineFuelMonitor" version="1.0.2.5" language="neutral" processorArchitecture="x86" />
@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MarineFuelMonitor.exe" size="94208">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MarineFuelMonitor.exe" size="114176">
       <assemblyIdentity name="MarineFuelMonitor" version="1.0.2.5" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>2Jz1QdtOf5UKsuQfN+JTKwfvFVU=</dsig:DigestValue>
+        <dsig:DigestValue>jAXH+oLgCfwW32aKRgau01gS2I4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -229,7 +229,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>enLOEO+YjeSkWfhnFN67PgEamDU=</dsig:DigestValue>
+        <dsig:DigestValue>vM0chRod/Co+4mVW/xWXbRNZY8k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -241,17 +241,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>4lfXecJej9+a1g3VqHMyhYsNhPI=</dsig:DigestValue>
+        <dsig:DigestValue>pUc2pMgdlkVOYQGpUeUtAoexn/Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="MarineFuelMonitor.exe.config" size="1061">
+  <file name="MarineFuelMonitor.exe.config" size="1181">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>uPgGZSrt9QXg29JBBJvCZbGM3bk=</dsig:DigestValue>
+      <dsig:DigestValue>KLA59LV9lLPiK/wLew2PO5s0Sho=</dsig:DigestValue>
     </hash>
   </file>
-<publisherIdentity name="CN=WB_H\Administrator" issuerKeyHash="624c5ac83c6cf5056e53d39701adf2fe4bda12ac" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>3eCoHzyhrXfdoy0KPlQj/Odhgmw=</DigestValue></Reference></SignedInfo><SignatureValue>djrPLHqKRSHT4saslGIouo9xDPgB+88eE4K44Nvuk2LdpYFcAZNkUtnyYU71yWYTPzjCnsIm9rVOkhqccMs0ICTG3KK8LoX1vjr3WqqazfzYV1Ssh5r1Jgx0o7EVBoWTXeCrNYHMfYyDLhh4dLNfzTVMEjPHs2k0GFQg/e2MaoQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>2673tV8D+DDNtl3JDa6oKaTUIeaxijGO6uXnIXtlNIHs0+8JgCD64qs8sHsuJNZXPSU6wup7o121m4cxTvPidvG/qCXNvKyoLQAVCZ+4prTosIWcVYyFH29sCG8Yrt9rj6o79AXXGfJvjhAmSoHO4xDm/eBeZUO4fr430NVGl1E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="6c8261e7fc23543e0a2da3dd77ada13c1fa8e0dd" Description="" Url=""><as:assemblyIdentity name="MarineFuelMonitor.exe" version="1.1.2.24" publicKeyToken="27247dc08b34ae9a" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=WB_H\Administrator</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>VQfZExWLG9Wol0gDlzyMfvAxhTc=</DigestValue></Reference></SignedInfo><SignatureValue>wnEiPXNn/2FLPxzAzzdF+wzlRtRgJkbFHULKbfnnt75t+DTgAq02rkajtB5X4Q0409ApEIardFUL55PZeXOdwn83sARbKQvV37f7nGJgL2hsZasIqghnr5KdqnGe89dVDSIi31I62KjROfPsyAtz+ZMEOBqlEDMRsHu9uyn/w4Q=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>2673tV8D+DDNtl3JDa6oKaTUIeaxijGO6uXnIXtlNIHs0+8JgCD64qs8sHsuJNZXPSU6wup7o121m4cxTvPidvG/qCXNvKyoLQAVCZ+4prTosIWcVYyFH29sCG8Yrt9rj6o79AXXGfJvjhAmSoHO4xDm/eBeZUO4fr430NVGl1E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAUqgAwIBAgIQSUfZ1jLimqBOpJEKe/khwDANBgkqhkiG9w0BAQUFADAvMS0wKwYDVQQDHiQAVwBCAF8ASABcAEEAZABtAGkAbgBpAHMAdAByAGEAdABvAHIwHhcNMTYxMDI1MTUyMTAyWhcNMTcxMDI1MjEyMTAyWjAvMS0wKwYDVQQDHiQAVwBCAF8ASABcAEEAZABtAGkAbgBpAHMAdAByAGEAdABvAHIwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANuu97VfA/gwzbZdyQ2uqCmk1CHmsYoxjurl5yF7ZTSB7NPvCYAg+uKrPLB7LiTWVz0lOsLqe6NdtZuHMU7z4nbxv6glzbysqC0AFQmfuKa06LCFnFWMhR9vbAhvGK7fa4+qO/QF1xnyb44QJkqBzuMQ5v3gXmVDuH6+N9DVRpdRAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAvekQeWPj9uqj2+snNnCj+fwqJC8LZkDA+Km5YKAhs6q8YCMhbHz4NJZ+IysvJCjjgRAp9/VfLwd5ZxIhERIyEODzEZBKo5USK/1HDHVDDSsPA5+QgcY3g4+E9JILTZXdqp5x9NsVZQxACF0saN6jOlLsYXu5IQ3jf6A8W8EXB94=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=WB_H\Administrator" issuerKeyHash="624c5ac83c6cf5056e53d39701adf2fe4bda12ac" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>2cUCpK2rgz1YwROtqk1GE4AJmvY=</DigestValue></Reference></SignedInfo><SignatureValue>A7KQ+FlXchMIKiBaV3SqtFyec6xeYYbGrRJScVFWwTtQN9giqsLZ2MZRwkoAm1+T5DaLNDoeZV3v/bSRpoTFvVQe0lsQHncSNNJ3S9vxLERBJ82T9Jf8LZtxn3vT9s5iBcz+0RWrk3Bt6zVaK0DC69hFADmcWoyTcc2NWVsXUiA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>2673tV8D+DDNtl3JDa6oKaTUIeaxijGO6uXnIXtlNIHs0+8JgCD64qs8sHsuJNZXPSU6wup7o121m4cxTvPidvG/qCXNvKyoLQAVCZ+4prTosIWcVYyFH29sCG8Yrt9rj6o79AXXGfJvjhAmSoHO4xDm/eBeZUO4fr430NVGl1E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="f69a098013464daaad13c1583d83abada402c5d9" Description="" Url=""><as:assemblyIdentity name="MarineFuelMonitor.exe" version="1.1.2.26" publicKeyToken="27247dc08b34ae9a" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=WB_H\Administrator</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>HpODUz0X/RqLdOaJ21oP59SdcN4=</DigestValue></Reference></SignedInfo><SignatureValue>Yyp1p3oE6EU5ayHxYrwuLFA7tjVBxQkS8fk3UKJ1Kr8nM64KSau+Z72q0rB6jvgXvrDwGmWbR0/BvfaeWim2rA/tA5n13GjBWcnI88IdDbsQxswO5pLOxuXgoD9nbP8RSuDKvsrSYkAq4vxnycqdfboMUSkHjBGdhzCw8IHZFBM=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>2673tV8D+DDNtl3JDa6oKaTUIeaxijGO6uXnIXtlNIHs0+8JgCD64qs8sHsuJNZXPSU6wup7o121m4cxTvPidvG/qCXNvKyoLQAVCZ+4prTosIWcVYyFH29sCG8Yrt9rj6o79AXXGfJvjhAmSoHO4xDm/eBeZUO4fr430NVGl1E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAUqgAwIBAgIQSUfZ1jLimqBOpJEKe/khwDANBgkqhkiG9w0BAQUFADAvMS0wKwYDVQQDHiQAVwBCAF8ASABcAEEAZABtAGkAbgBpAHMAdAByAGEAdABvAHIwHhcNMTYxMDI1MTUyMTAyWhcNMTcxMDI1MjEyMTAyWjAvMS0wKwYDVQQDHiQAVwBCAF8ASABcAEEAZABtAGkAbgBpAHMAdAByAGEAdABvAHIwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANuu97VfA/gwzbZdyQ2uqCmk1CHmsYoxjurl5yF7ZTSB7NPvCYAg+uKrPLB7LiTWVz0lOsLqe6NdtZuHMU7z4nbxv6glzbysqC0AFQmfuKa06LCFnFWMhR9vbAhvGK7fa4+qO/QF1xnyb44QJkqBzuMQ5v3gXmVDuH6+N9DVRpdRAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAvekQeWPj9uqj2+snNnCj+fwqJC8LZkDA+Km5YKAhs6q8YCMhbHz4NJZ+IysvJCjjgRAp9/VfLwd5ZxIhERIyEODzEZBKo5USK/1HDHVDDSsPA5+QgcY3g4+E9JILTZXdqp5x9NsVZQxACF0saN6jOlLsYXu5IQ3jf6A8W8EXB94=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

@@ -13,6 +13,9 @@
             <setting name="PLCConnIp" serializeAs="String">
                 <value>192.168.163.163</value>
             </setting>
+            <setting name="GPSPort" serializeAs="String">
+                <value>COM1</value>
+            </setting>
         </MarineFuelMonitor.UserSetings>
     </userSettings>
 </configuration>

@@ -8,5 +8,8 @@
     <Setting Name="PLCConnIp" Type="System.String" Scope="User">
       <Value Profile="(Default)">192.168.163.163</Value>
     </Setting>
+    <Setting Name="GPSPort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">COM1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

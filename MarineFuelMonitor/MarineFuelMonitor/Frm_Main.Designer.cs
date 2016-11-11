@@ -113,6 +113,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.LB_TimeTravelLen = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.LB_OperatorID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TK_FuelTankLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GG_MEPS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GG_MESB)).BeginInit();
@@ -160,10 +162,11 @@
             this.TK_FuelTankLevel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.TK_FuelTankLevel.Location = new System.Drawing.Point(1079, 4);
             this.TK_FuelTankLevel.Name = "TK_FuelTankLevel";
+            this.TK_FuelTankLevel.Range = new NationalInstruments.UI.Range(0D, 3D);
             this.TK_FuelTankLevel.Size = new System.Drawing.Size(265, 229);
             this.TK_FuelTankLevel.TabIndex = 3;
             this.TK_FuelTankLevel.TankStyle = NationalInstruments.UI.TankStyle.Flat;
-            this.TK_FuelTankLevel.Value = 7D;
+            this.TK_FuelTankLevel.Value = 3D;
             // 
             // GG_MEPS
             // 
@@ -729,9 +732,9 @@
             this.label42.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label42.Location = new System.Drawing.Point(488, 547);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(59, 12);
+            this.label42.Size = new System.Drawing.Size(83, 12);
             this.label42.TabIndex = 63;
-            this.label42.Text = "海里油耗:";
+            this.label42.Text = "航次平均油耗:";
             // 
             // label43
             // 
@@ -739,9 +742,9 @@
             this.label43.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label43.Location = new System.Drawing.Point(115, 547);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(59, 12);
+            this.label43.Size = new System.Drawing.Size(83, 12);
             this.label43.TabIndex = 62;
-            this.label43.Text = "海里油耗:";
+            this.label43.Text = "航次平均油耗:";
             // 
             // label44
             // 
@@ -785,7 +788,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 12);
             this.label1.TabIndex = 68;
-            this.label1.Text = "当前模式消耗燃油";
+            this.label1.Text = "当前航次消耗燃油";
             // 
             // LB_UsedFuel
             // 
@@ -982,12 +985,34 @@
             this.label24.TabIndex = 80;
             this.label24.Text = "航次里程";
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label22.Location = new System.Drawing.Point(962, 385);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(23, 12);
+            this.label22.TabIndex = 83;
+            this.label22.Text = "ID:";
+            // 
+            // LB_OperatorID
+            // 
+            this.LB_OperatorID.AutoSize = true;
+            this.LB_OperatorID.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.LB_OperatorID.Location = new System.Drawing.Point(985, 386);
+            this.LB_OperatorID.Name = "LB_OperatorID";
+            this.LB_OperatorID.Size = new System.Drawing.Size(29, 12);
+            this.LB_OperatorID.TabIndex = 84;
+            this.LB_OperatorID.Text = "1004";
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.LB_OperatorID);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.LB_TimeTravelLen);
             this.Controls.Add(this.label24);
@@ -1169,6 +1194,8 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label LB_TimeTravelLen;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label LB_OperatorID;
     }
 }
 

@@ -16,6 +16,7 @@ namespace MarineFuelMonitor
         public static int Mode_Selected;
         public static int Mode_Selected_Last;
         public static int OperatorNow;
+        public static int GPSCounter;
         public static double ShipSpeed;
         public static DateTime StartTime; //工况起始时间
         public static DateTime TravelCalcTime;  //积分累计上次时间
@@ -38,9 +39,10 @@ namespace MarineFuelMonitor
          * InputAI[4]:InstantShipSpeed
          * InputAI[5]:InstantN
          * InputAI[6]:InstantE
-         * InputAI[7]:TankLevel
+         * InputAI[7]:TankLevel油舱液位
          * 
-         * InputAI[8]:TankLevel
+         * InputAI[8]:TankLevel仓容
+         * InputAI[9]:TankLevel重量
          * 
          * InputAI[10]：左主机瞬时油耗
          * InputAI[11]：左主机本航次油耗

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace MarineFuelMonitor
 {
@@ -25,7 +26,19 @@ namespace MarineFuelMonitor
         {
             this.TB_RDSConnString.Text = UserSetings.Default.RDSConnString;
             this.TB_PLCIP.Text = UserSetings.Default.PLCConnIp;
-
+            string[] str = System.IO.Ports.SerialPort.GetPortNames();
+            if (str != null)
+            {
+                foreach (string s in str)
+                {
+                    cmb_ComSelect.Items.Add(s);
+                }
+            }
+            else
+            {
+                MessageBox.Show("没有发现串口");
+            }
+            cmb_ComSelect.Text = UserSetings.Default.GPSPort;
         }
 
         private void BTN_DBResave_Click(object sender, EventArgs e)
@@ -38,6 +51,45 @@ namespace MarineFuelMonitor
         {
             UserSetings.Default.PLCConnIp = this.TB_PLCIP.Text;
             UserSetings.Default.Save();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmb_ComSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UserSetings.Default.GPSPort = cmb_ComSelect.Text;
+            UserSetings.Default.Save();
+        }
+
+        private void cmb_ComSelect_TextChanged(object sender, EventArgs e)
+        {
+           // UserSetings.Default.GPSPort = cmb_ComSelect.Text;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("设置开机自启动，需要修改注册表", "提示");
+            string path = Application.ExecutablePath;
+            RegistryKey rk = Registry.LocalMachine;
+            RegistryKey rk2 = rk.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+            rk2.SetValue("AutoStart", path);
+            rk2.Close();
+            rk.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("取消开机自启动，需要修改注册表", "提示");
+            string path = Application.ExecutablePath;
+            RegistryKey rk = Registry.LocalMachine;
+            RegistryKey rk2 = rk.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+            rk2.DeleteValue("AutoStart", false);
+            rk2.Close();
+            rk.Close();
         }
     }
 }
