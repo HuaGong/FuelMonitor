@@ -26,7 +26,9 @@ namespace MarineFuelMonitor
         {
             this.TB_RDSConnString.Text = UserSetings.Default.RDSConnString;
             this.TB_PLCIP.Text = UserSetings.Default.PLCConnIp;
+            this.cmb_ComSelect.Text = UserSetings.Default.GPSPort;
             string[] str = System.IO.Ports.SerialPort.GetPortNames();
+            this.tb_DeleteDay.Text = UserSetings.Default.DeleteDay;
             if (str != null)
             {
                 foreach (string s in str)
@@ -44,6 +46,7 @@ namespace MarineFuelMonitor
         private void BTN_DBResave_Click(object sender, EventArgs e)
         {
             UserSetings.Default.RDSConnString = this.TB_RDSConnString.Text;
+            UserSetings.Default.DeleteDay = this.tb_DeleteDay.Text;
             UserSetings.Default.Save();
         }
 

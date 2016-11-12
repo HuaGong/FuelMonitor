@@ -188,7 +188,15 @@ namespace MarineFuelMonitor
                         }
 
 
-                           
+                        //删除过期数据 
+                            MySqlCommand mydelecmd =new MySqlCommand("delete From revrealdata where DATE(TIME) <= DATE(DATE_SUB(NOW(),INTERVAL " 
+                                                                                     +  UserSetings.Default.DeleteDay + " day))"
+                                                                                     , conn);
+                            if (mydelecmd.ExecuteNonQuery() > 0)
+                            {
+                                Console.WriteLine("数据删除成功！");
+
+                            }
 
 
 

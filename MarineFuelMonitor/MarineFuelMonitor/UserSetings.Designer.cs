@@ -59,5 +59,17 @@ namespace MarineFuelMonitor {
                 this["GPSPort"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        public string DeleteDay {
+            get {
+                return ((string)(this["DeleteDay"]));
+            }
+            set {
+                this["DeleteDay"] = value;
+            }
+        }
     }
 }
