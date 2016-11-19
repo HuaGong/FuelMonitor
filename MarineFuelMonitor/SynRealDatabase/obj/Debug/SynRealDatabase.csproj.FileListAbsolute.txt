@@ -1,7 +1,3 @@
-E:\CSharp\MarineFuelMonitor\SynRealDatabase\bin\Debug\SynRealDatabase.dll
-E:\CSharp\MarineFuelMonitor\SynRealDatabase\bin\Debug\SynRealDatabase.pdb
-E:\CSharp\MarineFuelMonitor\SynRealDatabase\obj\Debug\SynRealDatabase.dll
-E:\CSharp\MarineFuelMonitor\SynRealDatabase\obj\Debug\SynRealDatabase.pdb
 F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\SynRealDatabase\bin\Debug\SynRealDatabase.dll
 F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\SynRealDatabase\bin\Debug\SynRealDatabase.pdb
 F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\SynRealDatabase\obj\Debug\SynRealDatabase.dll

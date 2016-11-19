@@ -95,6 +95,7 @@ namespace SynRealDatabase
                 readerSrc = cmdSrc.ExecuteReader();
 
                 DateTime Time;
+                string tTime;
                 int MENumber;
                 float InstantFuel;
                 int InstantMESpeed;
@@ -104,9 +105,11 @@ namespace SynRealDatabase
                 double InstantE;
                 float TankLevel;
 
+
                 while (readerSrc.Read())
                 {
                     Time = readerSrc.GetDateTime(readerSrc.GetOrdinal("Time"));
+                    tTime = Time.ToString("yyyy-MM-dd HH:mm:ss");
                     MENumber = readerSrc.GetInt32(readerSrc.GetOrdinal("MENumber"));
                     InstantFuel = readerSrc.GetFloat(readerSrc.GetOrdinal("InstantFuel"));
                     InstantMESpeed = readerSrc.GetInt32(readerSrc.GetOrdinal("InstantMESpeed"));
@@ -121,7 +124,7 @@ namespace SynRealDatabase
                         if (ConnTar.State == ConnectionState.Open)
                         {
                             MySqlCommand mycmd = new MySqlCommand("insert into revrealdata(Time,MENumber,InstantFuel,InstantMESpeed,InstantTemp,InstantShipSpeed,InstantN,InstantE,TankLevel) values(STR_TO_DATE('"
-                                                                                      + Time + "','%Y-%m-%d %H:%i:%s'),"
+                                                                                      + tTime + "','%Y-%m-%d %H:%i:%s'),"
                                                                                       + MENumber + ","
                                                                                       + InstantFuel + ","
                                                                                       + InstantMESpeed + ","

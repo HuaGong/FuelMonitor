@@ -45,7 +45,9 @@ namespace MarineFuelMonitor
         SerialPort GPSPort = new SerialPort();
 
         public Frm_Main()
+
         {
+
             InitializeComponent();
             //Data.conn = string.Format("Server=rm-uf64fql0n27338879o.mysql.rds.aliyuncs.com;uid=tuser;pwd=t_user001;Database=shipinfo;CharSet=utf8;port=3306");
             Data.conn = string.Format("Server=localhost;uid=root;pwd=ihmc;Database=marinefueldb;CharSet=utf8;port=3306");
@@ -60,6 +62,10 @@ namespace MarineFuelMonitor
            
         }
 
+        private void initialDLL()
+        {
+          
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -265,17 +271,17 @@ namespace MarineFuelMonitor
             //工况更改之后计算时间、
             if ((Data.Mode_Selected != Data.Mode_Selected_Last) && Data.InputDI[13]==true)
             {
+                
                 M.WaitOne();
                 Data.ReadyToWriteSubData = true;
-                
                 LB_StartTime.Text = DateTime.Now.ToString("T");
                Data.Mode_Selected_Last = Data.Mode_Selected;
-               Data.InputDI[13] = false;
                //初始化积分程序变量
                Data.TravelCalcTime = DateTime.Now;
                Data.TravelLen = 0.0;
                Data.InputAI[11] = 0.0;
                Data.InputAI[21] = 0.0;
+               Data.InputDI[13] = false;
                M.ReleaseMutex();
              }
 
@@ -536,6 +542,10 @@ namespace MarineFuelMonitor
                             LrealTrans[7] = LrealTrans4[1];
                             //Data.InputAI[25] = BitConverter.ToDouble(LrealTrans, 0);
 
+                           // Data.InputAI[4] = Convert.ToDouble(readHoldingRegisters[20]) / 100.0;//InstantShipSpeed
+                            Data.InputAI[7] = Convert.ToDouble(readHoldingRegisters[21]) / 100.0;//Vol
+                            Data.InputAI[8] = Convert.ToDouble(readHoldingRegisters[22]) / 100.0;//Weight
+                            Data.InputAI[9] = Convert.ToDouble(readHoldingRegisters[23]) / 100.0;//Density
                             Data.PLCComFlag = false;
 
                         }
@@ -644,7 +654,7 @@ namespace MarineFuelMonitor
             }
             if ((Data.Mode_Selected != Data.Mode_Selected_Last) && Data.InputDI[13] == false)
             {
-                Data.InputDI[13] = true;
+                
                 M.WaitOne();
                 string BeginTime, EndTime, Mode, Operator, MENumber, MENumber2, AveFuel, AveFuel2, SubTotal, SubTotal2;
                 BeginTime = Data.StartTime.ToString("yyyy-MM-dd HH:mm:ss");
@@ -657,6 +667,8 @@ namespace MarineFuelMonitor
                 AveFuel2 = Data.InputAI[21].ToString("N2");
                 SubTotal = Data.InputAI[15].ToString();
                 SubTotal2 = Data.InputAI[25].ToString();
+                Data.InputDI[13] = true;
+               
                 MySqlCommand mycmd3 = new MySqlCommand("insert into revsubdata(BeginTime,EndTime,Mode,Operator,MENumber,AveFuel,SubTotal) values(STR_TO_DATE('"
                                                                           + BeginTime + "','%Y-%m-%d %H:%i:%s'),STR_TO_DATE('"
                                                                           + EndTime + "','%Y-%m-%d %H:%i:%s'),"
@@ -674,7 +686,7 @@ namespace MarineFuelMonitor
                                                                           + AveFuel2 + ","
                                                                           + SubTotal2 + ")", conn2);
 
-
+                M.ReleaseMutex();
 
                 if (mycmd3.ExecuteNonQuery() > 0)
                 {
@@ -685,7 +697,7 @@ namespace MarineFuelMonitor
                 }
                 
                 Data.StartTime = DateTime.Now;
-                M.ReleaseMutex();
+                
             }
             
             }
@@ -713,6 +725,11 @@ namespace MarineFuelMonitor
 
             Data.TravelCalcTime = DateTime.Now;
             Thread.Sleep(1000);
+
+        }
+
+        private void Led_PlcOK_StateChanged(object sender, ActionEventArgs e)
+        {
 
         }
            

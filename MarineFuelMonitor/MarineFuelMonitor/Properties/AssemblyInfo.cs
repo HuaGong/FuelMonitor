@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("MarineFuelMonitor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("镇江远洋电子")]
+[assembly: AssemblyCompany("镇江远洋电子科技有限公司")]
 [assembly: AssemblyProduct("MarineFuelMonitor")]
 [assembly: AssemblyCopyright("Copyright © HuaGong 2016")]
 [assembly: AssemblyTrademark("")]
@@ -17,7 +17,7 @@ using System.Runtime.InteropServices;
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
-[assembly: ComVisible(false)]
+[assembly: ComVisible(true)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("678bd6af-6ed0-4d57-b75f-f3cc001006f5")]

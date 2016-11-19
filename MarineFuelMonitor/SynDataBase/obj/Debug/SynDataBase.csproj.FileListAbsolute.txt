@@ -1,7 +1,3 @@
-E:\CSharp\MarineFuelMonitor\SynDataBase\bin\Debug\SynDataBase.dll
-E:\CSharp\MarineFuelMonitor\SynDataBase\bin\Debug\SynDataBase.pdb
-E:\CSharp\MarineFuelMonitor\SynDataBase\obj\Debug\SynDataBase.dll
-E:\CSharp\MarineFuelMonitor\SynDataBase\obj\Debug\SynDataBase.pdb
 F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\SynDataBase\bin\Debug\SynDataBase.dll
 F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\SynDataBase\bin\Debug\SynDataBase.pdb
 F:\DATA\GitHub\FuelMonitor\MarineFuelMonitor\SynDataBase\obj\Debug\SynDataBase.dll

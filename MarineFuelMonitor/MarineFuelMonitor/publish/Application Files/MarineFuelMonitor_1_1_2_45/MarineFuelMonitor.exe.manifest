@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="MarineFuelMonitor.exe" version="1.1.2.45" publicKeyToken="27247dc08b34ae9a" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="MarineFuelMonitor" version="1.0.2.5" language="neutral" processorArchitecture="msil" />
+    <commandLine file="MarineFuelMonitor.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 清单选项
+          如果要更改 Windows 用户帐户控制级别，请用以下节点之一替换
+          requestedExecutionLevel 节点。
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+          如果要利用文件和注册表虚拟化提供
+          向后兼容性，请删除 requestedExecutionLevel 节点。
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EasyModbus.dll" size="45056">
+      <assemblyIdentity name="EasyModbus" version="1.0.5908.34700" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>21CnB8CeKNLBOpbfkgG5NTDHlrk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MarineFuelMonitor.exe" size="109056">
+      <assemblyIdentity name="MarineFuelMonitor" version="1.0.2.5" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>C+18AGjRbL0q0Mb6EGLkyahSEHw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.VisualBasic.PowerPacks.Vs.dll" size="259464">
+      <assemblyIdentity name="Microsoft.VisualBasic.PowerPacks.Vs" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>louROCBjNcyBAgegwgoNzvKILv4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="zh-Hans\Microsoft.VisualBasic.PowerPacks.Vs.resources.dll" size="42904">
+      <assemblyIdentity name="Microsoft.VisualBasic.PowerPacks.Vs.resources" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="zh-Hans" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>mes6614yjCutpJCF9fIV+Bk9yPc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySql.Data.dll" size="382976">
+      <assemblyIdentity name="MySql.Data" version="6.6.4.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>2wFGwFM5qA2wI8GuFtDhZChy2n8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.Analysis.Enterprise.dll" size="303104">
+      <assemblyIdentity name="NationalInstruments.Analysis.Enterprise" version="13.0.40.242" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>a8OrEei+VNT+LCIi0T4YZfKeXLg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.Common.dll" size="555008">
+      <assemblyIdentity name="NationalInstruments.Common" version="13.0.40.188" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>FcNNmjz1giyNZR+0bwAHRutZNfk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.Common.Native.dll" size="83456">
+      <assemblyIdentity name="NationalInstruments.Common.Native" version="13.0.40.188" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>sfA/gAeh9dgjfd1zUcnK+ewppfA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.MStudioCLM.dll" size="4608">
+      <assemblyIdentity name="NationalInstruments.MStudioCLM" version="13.0.40.188" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>5IBUusvR8Wj82E8Z0AO7NB2kbWU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.NetworkVariable.dll" size="266240">
+      <assemblyIdentity name="NationalInstruments.NetworkVariable" version="13.0.40.242" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>MBBhycBl+IvvNFaHyqb70PZTGGc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.NiLmClientDLL.dll" size="29696">
+      <assemblyIdentity name="NationalInstruments.NiLmClientDLL" version="13.0.40.188" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>p21NNuP5SisD9tLIbdBlHQ5M/ZI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.Tdms.dll" size="124928">
+      <assemblyIdentity name="NationalInstruments.Tdms" version="13.0.40.242" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>oJZO/JABs+vLZ0lVhDJB/sS0CbY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.UI.dll" size="1695744">
+      <assemblyIdentity name="NationalInstruments.UI" version="13.0.40.242" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>2Uj9yer603OvVvizP7oxiURLW/k=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.UI.Styles3D.dll" size="267264">
+      <assemblyIdentity name="NationalInstruments.UI.Styles3D" version="13.0.40.242" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>3N9nePMjvNJEqM4EhgfhqP2EDl4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.UI.WindowsForms.dll" size="368640">
+      <assemblyIdentity name="NationalInstruments.UI.WindowsForms" version="13.0.40.242" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>w1QA9RFH7C1QIryWOKotmXJJMXI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SynDataBase.dll" size="6656">
+      <assemblyIdentity name="SynDataBase" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>S78lXLiSkpmjoBHTh07/fuJsjPY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SynRealDatabase.dll" size="6656">
+      <assemblyIdentity name="SynRealDatabase" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>hvFArR8Vsuo0riMzX/0nwqYl7tU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="MarineFuelMonitor.exe.config" size="1301">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>JsEjf3ogt9ZmzHlHmskzrNK0GPs=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=WB_H\Administrator" issuerKeyHash="624c5ac83c6cf5056e53d39701adf2fe4bda12ac" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>BnESCA0Lqj+ItNa3Gr3gTd4LUUE=</DigestValue></Reference></SignedInfo><SignatureValue>q/OBFiB+Uefp6XPBFwew/9LECd0dlFgQ9NiB0wzxGhqKO4ODepM/UC5S/r6jnpnMb2K6Eqwr9Q0cBszWwill24epkMrhlE3GvjZDlvk6GoadTW9L5hhgNkbtnHYtLT6PfUbuzecLxj+FpqAr0Fr1r+8Hu2evD1ra1yaa6xOmgcA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>2673tV8D+DDNtl3JDa6oKaTUIeaxijGO6uXnIXtlNIHs0+8JgCD64qs8sHsuJNZXPSU6wup7o121m4cxTvPidvG/qCXNvKyoLQAVCZ+4prTosIWcVYyFH29sCG8Yrt9rj6o79AXXGfJvjhAmSoHO4xDm/eBeZUO4fr430NVGl1E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="41510bde4de0bd1ab7d6b4883faa0b0d08127106" Description="" Url=""><as:assemblyIdentity name="MarineFuelMonitor.exe" version="1.1.2.45" publicKeyToken="27247dc08b34ae9a" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=WB_H\Administrator</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>2AaGqHqW3MJGVuWK8FEw2iN9QvA=</DigestValue></Reference></SignedInfo><SignatureValue>l9x+D+avk/vGvoau/es9hEb8OztkGCTG50DyBrkmwc61YmCcEYRP5Q17iDWvV+GhmApmw6LmaKJty4iex8yqhkOkV0DO4dq21Cmra5yPgZU4sH9uX5K3IYbeyfs9ZiDgLATrrJAwH/L4e2DsRIOwmWdPEuf4wbm3219OvEIT3Bo=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>2673tV8D+DDNtl3JDa6oKaTUIeaxijGO6uXnIXtlNIHs0+8JgCD64qs8sHsuJNZXPSU6wup7o121m4cxTvPidvG/qCXNvKyoLQAVCZ+4prTosIWcVYyFH29sCG8Yrt9rj6o79AXXGfJvjhAmSoHO4xDm/eBeZUO4fr430NVGl1E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAUqgAwIBAgIQSUfZ1jLimqBOpJEKe/khwDANBgkqhkiG9w0BAQUFADAvMS0wKwYDVQQDHiQAVwBCAF8ASABcAEEAZABtAGkAbgBpAHMAdAByAGEAdABvAHIwHhcNMTYxMDI1MTUyMTAyWhcNMTcxMDI1MjEyMTAyWjAvMS0wKwYDVQQDHiQAVwBCAF8ASABcAEEAZABtAGkAbgBpAHMAdAByAGEAdABvAHIwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANuu97VfA/gwzbZdyQ2uqCmk1CHmsYoxjurl5yF7ZTSB7NPvCYAg+uKrPLB7LiTWVz0lOsLqe6NdtZuHMU7z4nbxv6glzbysqC0AFQmfuKa06LCFnFWMhR9vbAhvGK7fa4+qO/QF1xnyb44QJkqBzuMQ5v3gXmVDuH6+N9DVRpdRAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAvekQeWPj9uqj2+snNnCj+fwqJC8LZkDA+Km5YKAhs6q8YCMhbHz4NJZ+IysvJCjjgRAp9/VfLwd5ZxIhERIyEODzEZBKo5USK/1HDHVDDSsPA5+QgcY3g4+E9JILTZXdqp5x9NsVZQxACF0saN6jOlLsYXu5IQ3jf6A8W8EXB94=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

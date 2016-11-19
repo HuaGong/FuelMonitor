@@ -97,7 +97,9 @@ namespace SynDataBase
                 readerSrc = cmdSrc.ExecuteReader();
 
                 DateTime BeginTime;
+                string tBeginTime;
                 DateTime EndTime;
+                string tEndTime;
                 int Mode;
                 int Operator;
                 int MENumber;
@@ -107,7 +109,9 @@ namespace SynDataBase
                 while (readerSrc.Read())
                 {
                     BeginTime = readerSrc.GetDateTime(readerSrc.GetOrdinal("BeginTime"));
+                    tBeginTime = BeginTime.ToString("yyyy-MM-dd HH:mm:ss");
                     EndTime = readerSrc.GetDateTime(readerSrc.GetOrdinal("EndTime"));
+                    tEndTime = EndTime.ToString("yyyy-MM-dd HH:mm:ss");
                     Mode = readerSrc.GetInt32(readerSrc.GetOrdinal("Mode"));
                     Operator = readerSrc.GetInt32(readerSrc.GetOrdinal("Operator"));
                     MENumber = readerSrc.GetInt32(readerSrc.GetOrdinal("MENumber"));
@@ -120,8 +124,8 @@ namespace SynDataBase
                         if (ConnTar.State == ConnectionState.Open)
                         {
                             MySqlCommand mycmd = new MySqlCommand("insert into revsubdata(BeginTime,EndTime,Mode,Operator,MENumber,AveFuel,SubTotal) values(STR_TO_DATE('"
-                                                                                      + BeginTime + "','%Y-%m-%d %H:%i:%s'),STR_TO_DATE('"
-                                                                                      + EndTime + "','%Y-%m-%d %H:%i:%s'),"
+                                                                                      + tBeginTime + "','%Y-%m-%d %H:%i:%s'),STR_TO_DATE('"
+                                                                                      + tEndTime + "','%Y-%m-%d %H:%i:%s'),"
                                                                                       + Mode + ","
                                                                                       + Operator + ","
                                                                                       + MENumber + ","
