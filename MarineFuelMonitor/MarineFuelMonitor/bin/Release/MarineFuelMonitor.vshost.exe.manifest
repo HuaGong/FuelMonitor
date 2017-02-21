@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="MarineFuelMonitor.exe" version="1.1.2.11" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="MarineFuelMonitor.exe" version="1.1.2.52" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="MarineFuelMonitor" version="1.0.2.5" language="neutral" processorArchitecture="msil" />
@@ -42,18 +42,27 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="Microsoft.VisualBasic.PowerPacks.Vs" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="aliyun-net-sdk-core.dll" size="61952">
+      <assemblyIdentity name="aliyun-net-sdk-core" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>MFmMfJ+HA0RpnqHgEHvgiLIzjyQ=</dsig:DigestValue>
+      </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="MySql.Data" version="6.6.4.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="NationalInstruments.NiLmClientDLL" version="13.0.40.188" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="aliyun-net-sdk-sms.dll" size="14848">
+      <assemblyIdentity name="aliyun-net-sdk-sms" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>nd8vLI2hv+2QDDFqEIWgJf4R9cQ=</dsig:DigestValue>
+      </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -69,14 +78,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MarineFuelMonitor.exe" size="89600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MarineFuelMonitor.exe" size="116224">
       <assemblyIdentity name="MarineFuelMonitor" version="1.0.2.5" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>3dwoZ5DFy6RtKNKsd5ysSMc3Hgo=</dsig:DigestValue>
+        <dsig:DigestValue>EVBZMsKUSQUGO2gwRWkdfXBsae0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.VisualBasic.PowerPacks.Vs.dll" size="259464">
+      <assemblyIdentity name="Microsoft.VisualBasic.PowerPacks.Vs" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>louROCBjNcyBAgegwgoNzvKILv4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -89,6 +110,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
         <dsig:DigestValue>mes6614yjCutpJCF9fIV+Bk9yPc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySql.Data.dll" size="382976">
+      <assemblyIdentity name="MySql.Data" version="6.6.4.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>2wFGwFM5qA2wI8GuFtDhZChy2n8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -129,6 +162,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.MStudioCLM.dll" size="4608">
+      <assemblyIdentity name="NationalInstruments.MStudioCLM" version="13.0.40.188" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>5IBUusvR8Wj82E8Z0AO7NB2kbWU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.NetworkVariable.dll" size="266240">
       <assemblyIdentity name="NationalInstruments.NetworkVariable" version="13.0.40.242" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -137,6 +182,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
         <dsig:DigestValue>MBBhycBl+IvvNFaHyqb70PZTGGc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NationalInstruments.NiLmClientDLL.dll" size="29696">
+      <assemblyIdentity name="NationalInstruments.NiLmClientDLL" version="13.0.40.188" publicKeyToken="DC6AD606294FC298" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>p21NNuP5SisD9tLIbdBlHQ5M/ZI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -196,7 +253,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>6m9KNG5Bj+Iz2Uc7mTALrmD6+gw=</dsig:DigestValue>
+        <dsig:DigestValue>FVikiB1IDyOFGHC/EUK1JiLjNqg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -208,17 +265,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>asK8W0z91k8hEpRg+dX44BXDdt0=</dsig:DigestValue>
+        <dsig:DigestValue>Bi2fd9XugU+Q1UPry+1TKZMe95U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="MarineFuelMonitor.exe.config" size="1061">
+  <file name="MarineFuelMonitor.exe.config" size="1568">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>uPgGZSrt9QXg29JBBJvCZbGM3bk=</dsig:DigestValue>
+      <dsig:DigestValue>fhFPLonww3d1AQ+Ip7Z9zXKQ68Q=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

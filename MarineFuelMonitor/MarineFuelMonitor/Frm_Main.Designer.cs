@@ -1102,6 +1102,7 @@
             this.Controls.Add(this.btn_SystemSetings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "油耗监控系统";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Main_Close);
             this.Load += new System.EventHandler(this.Frm_Main_Load);

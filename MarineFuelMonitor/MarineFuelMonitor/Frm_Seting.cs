@@ -29,6 +29,8 @@ namespace MarineFuelMonitor
             this.cmb_ComSelect.Text = UserSetings.Default.GPSPort;
             string[] str = System.IO.Ports.SerialPort.GetPortNames();
             this.tb_DeleteDay.Text = UserSetings.Default.DeleteDay;
+            this.tb_ManagerTel.Text = UserSetings.Default.ManagerTel;
+            this.tb_MarineName.Text= UserSetings.Default.MarineName;
             if (str != null)
             {
                 foreach (string s in str)
@@ -93,6 +95,19 @@ namespace MarineFuelMonitor
             rk2.DeleteValue("AutoStart", false);
             rk2.Close();
             rk.Close();
+        }
+
+        private void ManagerTelChanged(object sender, EventArgs e)
+        {
+            UserSetings.Default.ManagerTel = "13952850491,"+ this.tb_ManagerTel.Text;
+            UserSetings.Default.Save();
+        }
+
+        private void MarineNameChanged(object sender, EventArgs e)
+        {
+            UserSetings.Default.MarineName = this.tb_MarineName.Text;
+            UserSetings.Default.Save();
+
         }
     }
 }

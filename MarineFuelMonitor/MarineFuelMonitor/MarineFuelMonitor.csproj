@@ -29,7 +29,7 @@
     <UpdateUrl>http://139.224.165.192/MarineFuelMonitor/</UpdateUrl>
     <ProductName>油耗监控系统</ProductName>
     <PublisherName>镇江远洋电子</PublisherName>
-    <ApplicationRevision>47</ApplicationRevision>
+    <ApplicationRevision>53</ApplicationRevision>
     <ApplicationVersion>1.1.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -67,6 +67,14 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="aliyun-net-sdk-core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\aliyun-net-sdk-core.dll</HintPath>
+    </Reference>
+    <Reference Include="aliyun-net-sdk-sms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\aliyun-net-sdk-sms.dll</HintPath>
+    </Reference>
     <Reference Include="EasyModbus, Version=1.0.5908.34700, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>dll\EasyModbus.dll</HintPath>
@@ -162,6 +170,12 @@
     <Compile Include="CardException.cs" />
     <Compile Include="CardPolling.cs" />
     <Compile Include="Data.cs" />
+    <Compile Include="Frm_Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Message.Designer.cs">
+      <DependentUpon>Frm_Message.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Seting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +227,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>UserSetings.settings</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Frm_Message.resx">
+      <DependentUpon>Frm_Message.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Seting.resx">
       <DependentUpon>Frm_Seting.cs</DependentUpon>
     </EmbeddedResource>

@@ -53,6 +53,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Quit = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tb_ManagerTel = new System.Windows.Forms.TextBox();
+            this.tb_MarineName = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tb_db.SuspendLayout();
             this.Tpg_Server.SuspendLayout();
             this.Tpg_PLC.SuspendLayout();
@@ -276,6 +281,11 @@
             // Tpg_System
             // 
             this.Tpg_System.BackColor = System.Drawing.SystemColors.Control;
+            this.Tpg_System.Controls.Add(this.tb_MarineName);
+            this.Tpg_System.Controls.Add(this.label11);
+            this.Tpg_System.Controls.Add(this.tb_ManagerTel);
+            this.Tpg_System.Controls.Add(this.label10);
+            this.Tpg_System.Controls.Add(this.label9);
             this.Tpg_System.Controls.Add(this.button2);
             this.Tpg_System.Controls.Add(this.button1);
             this.Tpg_System.Location = new System.Drawing.Point(4, 104);
@@ -286,9 +296,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(387, 59);
+            this.button2.Location = new System.Drawing.Point(365, 109);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(267, 111);
+            this.button2.Size = new System.Drawing.Size(160, 62);
             this.button2.TabIndex = 1;
             this.button2.Text = "取消开机自动启动";
             this.button2.UseVisualStyleBackColor = true;
@@ -296,9 +306,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(55, 59);
+            this.button1.Location = new System.Drawing.Point(173, 109);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(267, 111);
+            this.button1.Size = new System.Drawing.Size(160, 62);
             this.button1.TabIndex = 0;
             this.button1.Text = "设为开机自动启动";
             this.button1.UseVisualStyleBackColor = true;
@@ -314,6 +324,49 @@
             this.btn_Quit.Text = "退出";
             this.btn_Quit.UseVisualStyleBackColor = true;
             this.btn_Quit.Click += new System.EventHandler(this.btn_QuitClicked);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(18, 252);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(147, 21);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "管理者手机号:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(18, 130);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(147, 21);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "开机自动启动:";
+            // 
+            // tb_ManagerTel
+            // 
+            this.tb_ManagerTel.Location = new System.Drawing.Point(173, 251);
+            this.tb_ManagerTel.Name = "tb_ManagerTel";
+            this.tb_ManagerTel.Size = new System.Drawing.Size(352, 31);
+            this.tb_ManagerTel.TabIndex = 4;
+            this.tb_ManagerTel.TextChanged += new System.EventHandler(this.ManagerTelChanged);
+            // 
+            // tb_MarineName
+            // 
+            this.tb_MarineName.Location = new System.Drawing.Point(173, 35);
+            this.tb_MarineName.Name = "tb_MarineName";
+            this.tb_MarineName.Size = new System.Drawing.Size(352, 31);
+            this.tb_MarineName.TabIndex = 6;
+            this.tb_MarineName.TextChanged += new System.EventHandler(this.MarineNameChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 36);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(138, 21);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "船 舶 名 称:";
             // 
             // Frm_Seting
             // 
@@ -333,6 +386,7 @@
             this.Tpg_GPS.ResumeLayout(false);
             this.Tpg_GPS.PerformLayout();
             this.Tpg_System.ResumeLayout(false);
+            this.Tpg_System.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -364,5 +418,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tb_ManagerTel;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tb_MarineName;
+        private System.Windows.Forms.Label label11;
     }
 }

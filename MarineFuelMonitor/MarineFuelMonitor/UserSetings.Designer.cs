@@ -71,5 +71,29 @@ namespace MarineFuelMonitor {
                 this["DeleteDay"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("13952850491,18652863099")]
+        public string ManagerTel {
+            get {
+                return ((string)(this["ManagerTel"]));
+            }
+            set {
+                this["ManagerTel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("船名")]
+        public string MarineName {
+            get {
+                return ((string)(this["MarineName"]));
+            }
+            set {
+                this["MarineName"] = value;
+            }
+        }
     }
 }

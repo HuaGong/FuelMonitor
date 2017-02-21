@@ -14,5 +14,11 @@
     <Setting Name="DeleteDay" Type="System.String" Scope="User">
       <Value Profile="(Default)">30</Value>
     </Setting>
+    <Setting Name="ManagerTel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">13952850491,18652863099</Value>
+    </Setting>
+    <Setting Name="MarineName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">船名</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

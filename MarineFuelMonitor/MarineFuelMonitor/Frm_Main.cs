@@ -652,7 +652,7 @@ namespace MarineFuelMonitor
                 Data.MysqlStatus = false;
                 Led_ConnOK.Value = false;
             }
-            if ((Data.Mode_Selected != Data.Mode_Selected_Last) && Data.InputDI[13] == false)
+            if ((Data.Mode_Selected != Data.Mode_Selected_Last) && Data.InputDI[13] == false && conn2.State == ConnectionState.Open)
             {
                 
                 M.WaitOne();
@@ -704,7 +704,8 @@ namespace MarineFuelMonitor
 
         private void btn_DayOrNight_Click(object sender, EventArgs e)
         {
-            
+            Frm_Message frm_message = new Frm_Message();
+            frm_message.ShowDialog();
         }
 
         private void bgw_CalcTravelLen(object sender, DoWorkEventArgs e)
@@ -719,8 +720,8 @@ namespace MarineFuelMonitor
             ts=DateTime.Now-Data.TravelCalcTime;
             //Data.ShipSpeed = 10.8;
             Data.TravelLen = Data.TravelLen + (Convert.ToDouble(ts.TotalMilliseconds) * Data.ShipSpeed) / 3600000.0;
-            Data.InputAI[11] = Data.InputAI[11] + (Convert.ToDouble(ts.TotalMilliseconds) * Data.InputAI[10]) / 60000.0;
-            Data.InputAI[21] = Data.InputAI[21] + (Convert.ToDouble(ts.TotalMilliseconds) * Data.InputAI[20]) / 60000.0;
+            Data.InputAI[11] = Data.InputAI[11] + (Convert.ToDouble(ts.TotalMilliseconds) * Data.InputAI[10]) / 3600000.0;
+            Data.InputAI[21] = Data.InputAI[21] + (Convert.ToDouble(ts.TotalMilliseconds) * Data.InputAI[20]) / 3600000.0;
 
 
             Data.TravelCalcTime = DateTime.Now;
