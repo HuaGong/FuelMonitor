@@ -134,24 +134,27 @@ namespace MarineFuelMonitor
                             tb_InstantN = Data.InputAI[31].ToString();
                             tb_InstantE = Data.InputAI[32].ToString();
                             tb_TankLevel = Data.InputAI[20].ToString();
-                            MySqlCommand mycmd = new MySqlCommand("insert into revrealdata(Time,MENumber,InstantFuel,InstantMESpeed,InstantTemp,InstantShipSpeed,InstantN,InstantE,TankLevel) values(STR_TO_DATE('"
-                                                                                      + tb_Time + "','%Y-%m-%d %H:%i:%s'),"
-                                                                                      + tb_MENumber + ","
-                                                                                      + tb_InstantFuel + ","
-                                                                                      + tb_InstantMESpeed + ","
-                                                                                      + tb_InstantTemp + ","
-                                                                                      + tb_InstantShipSpeed + ","
-                                                                                      + tb_InstantN + ","
-                                                                                      + tb_InstantE + ","
-                                                                                      + tb_TankLevel + ")", conn);
-
-
-
-                            if (mycmd.ExecuteNonQuery() > 0)
+                            if (Data.InputAI[14] >= 1.0)
                             {
-                                Console.WriteLine("数据插入成功！");
-                                Led_SqlInsert.Value = true;
+                                MySqlCommand mycmd = new MySqlCommand("insert into revrealdata(Time,MENumber,InstantFuel,InstantMESpeed,InstantTemp,InstantShipSpeed,InstantN,InstantE,TankLevel) values(STR_TO_DATE('"
+                                                                                         + tb_Time + "','%Y-%m-%d %H:%i:%s'),"
+                                                                                         + tb_MENumber + ","
+                                                                                         + tb_InstantFuel + ","
+                                                                                         + tb_InstantMESpeed + ","
+                                                                                         + tb_InstantTemp + ","
+                                                                                         + tb_InstantShipSpeed + ","
+                                                                                         + tb_InstantN + ","
+                                                                                         + tb_InstantE + ","
+                                                                                         + tb_TankLevel + ")", conn);
 
+
+
+                                if (mycmd.ExecuteNonQuery() > 0)
+                                {
+                                    Console.WriteLine("数据插入成功！");
+                                    Led_SqlInsert.Value = true;
+
+                                }
                             }
 
                             Data.InputDI[10] =true;
@@ -171,24 +174,26 @@ namespace MarineFuelMonitor
                             tb_InstantN = Data.InputAI[31].ToString();
                             tb_InstantE = Data.InputAI[32].ToString();
                             tb_TankLevel = Data.InputAI[20].ToString();
-
-                            MySqlCommand mycmd2 = new MySqlCommand("insert into revrealdata(Time,MENumber,InstantFuel,InstantMESpeed,InstantTemp,InstantShipSpeed,InstantN,InstantE,TankLevel) values(STR_TO_DATE('"
-                                                                                     + tb_Time + "','%Y-%m-%d %H:%i:%s'),"
-                                                                                     + tb_MENumber + ","
-                                                                                     + tb_InstantFuel + ","
-                                                                                     + tb_InstantMESpeed + ","
-                                                                                     + tb_InstantTemp + ","
-                                                                                     + tb_InstantShipSpeed + ","
-                                                                                     + tb_InstantN + ","
-                                                                                     + tb_InstantE + ","
-                                                                                     + tb_TankLevel + ")", conn);
-
-
-                            if (mycmd2.ExecuteNonQuery() > 0)
+                            if (Data.InputAI[24] >= 1.0)
                             {
-                                Console.WriteLine("数据插入成功！");
-                                Led_SqlInsert.Value = true;
+                                MySqlCommand mycmd2 = new MySqlCommand("insert into revrealdata(Time,MENumber,InstantFuel,InstantMESpeed,InstantTemp,InstantShipSpeed,InstantN,InstantE,TankLevel) values(STR_TO_DATE('"
+                                                                                         + tb_Time + "','%Y-%m-%d %H:%i:%s'),"
+                                                                                         + tb_MENumber + ","
+                                                                                         + tb_InstantFuel + ","
+                                                                                         + tb_InstantMESpeed + ","
+                                                                                         + tb_InstantTemp + ","
+                                                                                         + tb_InstantShipSpeed + ","
+                                                                                         + tb_InstantN + ","
+                                                                                         + tb_InstantE + ","
+                                                                                         + tb_TankLevel + ")", conn);
 
+
+                                if (mycmd2.ExecuteNonQuery() > 0)
+                                {
+                                    Console.WriteLine("数据插入成功！");
+                                    Led_SqlInsert.Value = true;
+
+                                }
                             }
                             Data.InputDI[10] = false;
                         }
@@ -351,6 +356,8 @@ namespace MarineFuelMonitor
             {
                 Led_GpsOk.Value = false;
                 Data.GPSCounter = 10;
+                Data.InputAI[5] = 0.0;
+                Data.InputAI[6] = 0.0;
             }
             else
             {
@@ -398,13 +405,17 @@ namespace MarineFuelMonitor
             Data.InputAI[6] = pos.y;
             Data.InputAI[4] = pos.speed / 1.852;
             Data.ShipSpeed = Data.InputAI[4];
+            Data.GPSCounter = 0;
+            Data.InputAI[30] = Data.InputAI[4];//Speed
+            Data.InputAI[31] = Data.InputAI[6];//N
+            Data.InputAI[32] = Data.InputAI[5];//E
 
         }
         private void initalGPS()
         {
             //GPSPort.PortName = cmb_ComSelect.Text;
             GPSPort.PortName = UserSetings.Default.GPSPort;
-            GPSPort.BaudRate = 9600;
+            GPSPort.BaudRate = 4800;
             GPSPort.StopBits = StopBits.One;
             GPSPort.Parity = Parity.None;
             GPSPort.ReadTimeout = SerialPort.InfiniteTimeout;
@@ -730,6 +741,11 @@ namespace MarineFuelMonitor
         }
 
         private void Led_PlcOK_StateChanged(object sender, ActionEventArgs e)
+        {
+
+        }
+
+        private void TK_FuelTankLevel_AfterChangeValue(object sender, AfterChangeNumericValueEventArgs e)
         {
 
         }

@@ -311,8 +311,8 @@ namespace ICCard
         {
            // textBoxValueAmount.Text = "";
             //MessageBox.Show("Card is removed");
-            Name = "无人";
-            ID = 0;
+           // Name = "无人";
+           // ID = 0;
         }
 
         void cardPolling_OnCardFound(object sender, CardPollingEventArg e)

@@ -163,11 +163,12 @@
             this.TK_FuelTankLevel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.TK_FuelTankLevel.Location = new System.Drawing.Point(1001, 6);
             this.TK_FuelTankLevel.Name = "TK_FuelTankLevel";
-            this.TK_FuelTankLevel.Range = new NationalInstruments.UI.Range(0D, 3D);
+            this.TK_FuelTankLevel.Range = new NationalInstruments.UI.Range(0D, 110D);
             this.TK_FuelTankLevel.Size = new System.Drawing.Size(265, 229);
             this.TK_FuelTankLevel.TabIndex = 3;
             this.TK_FuelTankLevel.TankStyle = NationalInstruments.UI.TankStyle.Flat;
             this.TK_FuelTankLevel.Value = 3D;
+            this.TK_FuelTankLevel.AfterChangeValue += new NationalInstruments.UI.AfterChangeNumericValueEventHandler(this.TK_FuelTankLevel_AfterChangeValue);
             // 
             // GG_MEPS
             // 
@@ -537,9 +538,9 @@
             this.label25.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label25.Location = new System.Drawing.Point(1214, 249);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(34, 24);
+            this.label25.Size = new System.Drawing.Size(22, 24);
             this.label25.TabIndex = 44;
-            this.label25.Text = "Kg";
+            this.label25.Text = "T";
             // 
             // LB_FuelWeight
             // 
@@ -1022,7 +1023,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1280, 800);
+            this.ClientSize = new System.Drawing.Size(1280, 788);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.LB_OperatorID);
             this.Controls.Add(this.label22);

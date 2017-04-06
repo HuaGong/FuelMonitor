@@ -29,7 +29,7 @@
     <UpdateUrl>http://139.224.165.192/MarineFuelMonitor/</UpdateUrl>
     <ProductName>油耗监控系统</ProductName>
     <PublisherName>镇江远洋电子</PublisherName>
-    <ApplicationRevision>53</ApplicationRevision>
+    <ApplicationRevision>61</ApplicationRevision>
     <ApplicationVersion>1.1.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -252,7 +252,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="MarineFuelMonitor_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">

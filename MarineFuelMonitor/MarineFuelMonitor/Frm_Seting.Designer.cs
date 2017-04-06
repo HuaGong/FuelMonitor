@@ -50,14 +50,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmb_ComSelect = new System.Windows.Forms.ComboBox();
             this.Tpg_System = new System.Windows.Forms.TabPage();
+            this.tb_MarineName = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tb_ManagerTel = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Quit = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tb_ManagerTel = new System.Windows.Forms.TextBox();
-            this.tb_MarineName = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.tb_db.SuspendLayout();
             this.Tpg_Server.SuspendLayout();
             this.Tpg_PLC.SuspendLayout();
@@ -256,7 +256,8 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(193, 21);
             this.label5.TabIndex = 2;
-            this.label5.Text = "通信速率:9600 bps";
+            this.label5.Text = "通信速率:4800 bps";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label3
             // 
@@ -294,6 +295,49 @@
             this.Tpg_System.TabIndex = 3;
             this.Tpg_System.Text = "系统";
             // 
+            // tb_MarineName
+            // 
+            this.tb_MarineName.Location = new System.Drawing.Point(173, 35);
+            this.tb_MarineName.Name = "tb_MarineName";
+            this.tb_MarineName.Size = new System.Drawing.Size(352, 31);
+            this.tb_MarineName.TabIndex = 6;
+            this.tb_MarineName.TextChanged += new System.EventHandler(this.MarineNameChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 36);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(138, 21);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "船 舶 名 称:";
+            // 
+            // tb_ManagerTel
+            // 
+            this.tb_ManagerTel.Location = new System.Drawing.Point(173, 251);
+            this.tb_ManagerTel.Name = "tb_ManagerTel";
+            this.tb_ManagerTel.Size = new System.Drawing.Size(352, 31);
+            this.tb_ManagerTel.TabIndex = 4;
+            this.tb_ManagerTel.TextChanged += new System.EventHandler(this.ManagerTelChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(18, 130);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(147, 21);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "开机自动启动:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(18, 252);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(147, 21);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "管理者手机号:";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(365, 109);
@@ -324,49 +368,6 @@
             this.btn_Quit.Text = "退出";
             this.btn_Quit.UseVisualStyleBackColor = true;
             this.btn_Quit.Click += new System.EventHandler(this.btn_QuitClicked);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 252);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(147, 21);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "管理者手机号:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(18, 130);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(147, 21);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "开机自动启动:";
-            // 
-            // tb_ManagerTel
-            // 
-            this.tb_ManagerTel.Location = new System.Drawing.Point(173, 251);
-            this.tb_ManagerTel.Name = "tb_ManagerTel";
-            this.tb_ManagerTel.Size = new System.Drawing.Size(352, 31);
-            this.tb_ManagerTel.TabIndex = 4;
-            this.tb_ManagerTel.TextChanged += new System.EventHandler(this.ManagerTelChanged);
-            // 
-            // tb_MarineName
-            // 
-            this.tb_MarineName.Location = new System.Drawing.Point(173, 35);
-            this.tb_MarineName.Name = "tb_MarineName";
-            this.tb_MarineName.Size = new System.Drawing.Size(352, 31);
-            this.tb_MarineName.TabIndex = 6;
-            this.tb_MarineName.TextChanged += new System.EventHandler(this.MarineNameChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(18, 36);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(138, 21);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "船 舶 名 称:";
             // 
             // Frm_Seting
             // 

@@ -59,5 +59,10 @@ namespace MarineFuelMonitor
                 //ex.printStackTrace();
             }
         }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
